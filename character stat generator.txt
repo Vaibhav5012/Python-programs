@@ -1,0 +1,20 @@
+print("character stats generator")
+print()
+def stat(hp):
+  import random
+  hp = random.randint(1,hp)
+  return hp
+while True:
+  name = input("name your warrior: ")
+  hp = stat(6)
+  atk = stat(8)
+  print("their health is", hp, "hp")
+  print("their attack is", atk, "atk")
+  print()
+  again = input("again? ")
+  if again == "yes":
+    continue
+  else:
+    break
+chara = stat(hp)
+print(chara)

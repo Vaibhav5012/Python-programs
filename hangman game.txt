@@ -1,0 +1,50 @@
+import random
+
+print("Hangman")
+print()
+
+listOfWords = ["british", "suave", "integrity", "accent", "evil", "genius", "Downton"]
+
+wordChosen = random.choice(listOfWords)
+
+if wordChosen == "british":
+  print("Hint: A country in the UK")
+elif wordChosen == "suave":
+  print("Hint: A nationality")
+elif wordChosen == "integrity":
+  print("Hint: A quality")
+elif wordChosen == "accent":
+  print("Hint: A quality")
+elif wordChosen == "evil":
+  print("Hint: A quality")
+elif wordChosen == "genius":
+  print("Hint: A quality")
+elif wordChosen == "Downton":
+  print("Hint: A city in the UK")
+print()
+lives = 6
+while True:
+  letter = input("Choose a letter: ")
+  if letter in wordChosen:
+    print("Correct!")
+  else:
+    print("Nope, not in there.")
+    lives -= 1
+  allLetters = True
+  print()
+  for i in wordChosen:
+    if i in letter:
+      print(i, end="")
+    else:
+      print("_", end="")
+      allLetters = False
+  print()
+  if allLetters:
+    print(f"You won with {lives} left!")
+    break
+  if lives <= 0:
+    print(f"You ran out of lives! The answer was {wordChosen}")
+    break
+  else:
+    print(f"Only {lives} left")
+

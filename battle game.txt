@@ -1,0 +1,102 @@
+print("Character Builder")
+print()
+def dice(sides):
+  import random
+  roll = random.randint(1,100)
+  return roll
+
+def health():
+  health = ((dice(6)*dice(12))/2)+10
+  return health
+
+def strength():
+  strength = ((dice(6)*dice(12))/2)+12
+  return strength
+
+while True:
+  name = input("name your cahracter:")
+  race = input("what race is your character:")
+  print()
+  print(name)
+  print("Health:" , health())
+  print("Strength:" , strength())
+  print()
+  time.sleep(1)
+  name2 = input("name the character:")
+  race2 = input("what race is your character:")
+  print()
+  print(name2)
+  print("Health:" , health())
+  print("Strength:" , strength())
+  print()
+  time.sleep(1)
+  os.system("clear")
+  print("BATTLE TIME")
+  print()
+  print("The battle begins!")
+  print()
+  time.sleep(1)
+  count = 0
+  while True:
+    count += 1
+    print("Round" , count)
+    roll1 = dice(6)
+    roll2 = dice(6)
+    if roll1 > roll2:
+      print(name , "wins the first blow")
+      print(name2 , "takes a hit with" , strength() , "damage")
+      print()
+      print(name)
+      print("Health:" , health())
+      print()
+      print(name2)
+      print("Health:" , health()-strength())
+      print()
+      time.sleep(3)
+      os.system("clear")
+      if health()-strength() <= 0:
+        print("Oh no" , name2 , "has died!")
+        print()
+        print(name , "destroyed" , name2 , "in" , "rounds" , "!")
+        break
+      else:
+        continue
+    elif roll1 < roll2:
+      print(name2 , "wins the first blow")
+      print(name , "takes a hit with" , strength() , "damage")
+      print()
+      print(name)
+      print("Health:" , health()-strength())
+      print()
+      print(name2)
+      print("Health:" , health())
+      print()
+      time.sleep(3)
+      os.system("clear")
+      if health()-strength() <= 0:
+        print("Oh no" , name , "has died!")
+        print()
+        print(name2 , "destroyed" , name , "in" , "rounds" , "!")
+        break
+      else:
+        continue
+    else:
+      print("Their swords clash and they draw round")
+      print()
+      print(name)
+      print("Health:" , health())
+      print()
+      print(name2)
+      print("Health:" , health())
+      print()
+      time.sleep(3)
+      os.system("clear")
+      continue
+  print(name," defeated", name2, "in", count, "rounds!")
+  again = input("again?")
+  if again == "yes":
+    os.system("clear")
+    continue
+  else:
+    print("thank you for playing")
+    break  

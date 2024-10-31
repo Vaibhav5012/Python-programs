@@ -1,0 +1,33 @@
+import os, time
+print("Character Builder")
+print()
+def dice(sides):
+  import random
+  roll = random.randint(1,10)
+  return roll
+
+def health():
+  health = ((dice(6)*dice(12))/2)+10
+  return health
+
+def strength():
+  strength = ((dice(6)*dice(12))/2)+12
+  return strength
+
+while True:
+  name = input("name your cahracter:")
+  race = input("what race is your character:")
+  print()
+  print(name)
+  print("Health:" , health())
+  print("Strength:" , strength())
+  print()
+  print("May your name go down in Legend...")
+  print()
+  time.sleep(1)
+  again = input("Again?")
+  if again == "yes":
+    os.system("clear")
+    continue
+  else:
+    break

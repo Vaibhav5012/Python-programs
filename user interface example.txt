@@ -1,0 +1,35 @@
+import os,time
+
+logo = f"Music App"
+
+print(f"{logo: ^50}")
+time.sleep(1)
+print()
+print("🔥▶️  Radio Gaga")
+print("     Queen")
+print()
+time.sleep(1)
+print("PREV")
+print("     NEXT")
+print("          PAUSE")
+time.sleep(3)
+os.system("clear")
+welcome = "WELCOME TO"
+armbook = "--    ARMBOOK    --"
+print(f"{welcome: ^50}")
+print(f"{armbook: ^50}")
+print()
+text = "Definitely not a rip off of"
+print(f"{text: >50}")
+text = "a certain other social"
+print(f"{text: >50}")
+text = "networking site."
+print(f"{text: >50}")
+print()
+text = "honest"
+print(f"{text: ^50}")
+print()
+text = "Username:"
+print(f"{text: ^50}")
+text = "Password:"
+print(f"{text:^50}")

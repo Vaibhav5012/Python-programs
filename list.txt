@@ -1,0 +1,34 @@
+import os, time
+
+todo = []
+
+pr = "To Do List Manager"
+print(f"{pr:^50}")
+print()
+def printList():
+  print() 
+  for list in todo:
+    print(list)
+  print() 
+
+while True:
+  menu = input("add, view or edit?: ")
+  if menu == "add":
+    list = input("Who should I add to the party list?: ")
+    todo.append(list)
+    time.sleep(1)
+    os.system("clear")
+  elif menu == "edit":
+    list = input("What have you completed?: ")
+    if list in todo:
+      todo.remove(list)
+    else:
+      print(f"{list:^50} was not in the list")
+  elif menu == "view":
+    printList()
+    time.sleep(3)
+    os.system("clear")
+  else:
+    print("Please choose add, view or edit")
+
+  

@@ -1,0 +1,9 @@
+print("website rating")
+print()
+myDictionary = {"name" : None, "url": None, "des": None, "rating":"None"}
+
+for name in myDictionary.keys():
+  myDictionary[name] = input(f"{name}:")
+print()
+for name, value in myDictionary.items():
+  print(f"{name}:{value}")

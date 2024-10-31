@@ -1,0 +1,17 @@
+fullname = []
+
+def list():
+  print()
+  for name in fullname:
+    print(name)
+  print()
+
+while True:
+  _name = input("first name:").strip().capitalize()
+  _naame = input("last name:").strip().capitalize()
+  name = f"{_name} {_naame}"
+  if name not in fullname:
+    fullname.append(name)
+  else:
+    print("error duplicate name")
+  list()

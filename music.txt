@@ -1,0 +1,30 @@
+from replit import audio
+import os, time
+
+def play():
+  source = audio.play_file('audio.wav')
+  source.paused = False # unpause the playback
+  while True:
+    # Start taking user input and doing something with it
+    input()
+    
+while True:
+  # clear the screen 
+  os.system("clear")
+  # Show the menu
+  print(" my songs")
+  print()
+  time.sleep(1)
+  # take user's input
+  print("press 1 to play")
+  print("press 2 to exit")
+  print("press anything else to see the menu again")
+  song = play()
+  # check whether you should call the play() subroutine depending on user's input
+  if song == "1":
+    play()
+    time.sleep(1)
+  elif song == "2":
+    exit()
+  else:
+    continue
